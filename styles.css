@@ -6,7 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
+    /* background-color: #333; */
+    background-color: transparent;
     color: #fff;
     text-align: center;
     display: flex;
@@ -14,17 +15,75 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    z-index: 2;
 }
 
 .game-container {
     text-align: center;
+    position: absolute;
+    background-color: transparent;
+    z-index: 2;
 }
 
-h1 {
+/* h1 {
     font-size: 40px;
     color: red;
     margin-bottom: 20px;
-}
+
+} */
+
+h1 {
+    color:red;
+    padding: 16px 24px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
+  }
+h1::after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.9) translateZ(0);
+    filter: blur(15px);
+    background: linear-gradient(
+      to left,
+      #ff5770,
+      #e4428d,
+      #c42da8,
+      #9e16c3,
+      #6501de,
+      #9e16c3,
+      #c42da8,
+      #e4428d,
+      #ff5770
+    );
+    background-size: 200% 200%;
+    -webkit-animation: animateGlow 1.25s linear infinite;
+    animation: animateGlow 1.25s linear infinite;
+  }
+  
+  @-webkit-keyframes animateGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+  
+  @keyframes animateGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }  
 
 h2 {
     font-size: 20px;
@@ -66,10 +125,47 @@ h2 {
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 5px;
+    position: relative;
     cursor: pointer;
     margin-top: 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
 }
 
 .restart-button:hover {
     background-color: #1e7ad3;
 }
+
+.restart-button:after {
+    position: absolute;
+    content: "";
+    top: 15px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.9) translateZ(0);
+    filter: blur(15px);
+    background: linear-gradient(to left,#3498db);
+    background-size: 200% 200%;
+    -webkit-animation: animateGlow 1.25s linear infinite;
+    animation: animateGlow 1.25s linear infinite;
+  }
+  
+  @-webkit-keyframes animateGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }
+  
+  @keyframes animateGlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 200% 50%;
+    }
+  }  
