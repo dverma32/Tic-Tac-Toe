@@ -1,7 +1,22 @@
+
+
+:root {
+    --bg1: #da1919;
+    --bg: rgb(4, 0, 0);
+    --clr-1: #00c2ff;
+    --clr-2: #33ff8c;
+    --clr-3: #ffc640;
+    --clr-4: #e54cff;
+    --clr-5: #1d9ae8;
+    --blur: 1rem;
+    --fs: clamp(3rem, 8vw, 7rem);
+    --ls: clamp(-1.75px, -0.25vw,
+    -3.5px);
+    }
+
 * {
     margin: 0;
     padding: 0;
-    
     box-sizing: border-box;
 }
 
@@ -22,7 +37,7 @@ body {
 .game-container {
     text-align: center;
     position: absolute;
-    background-color: transparent;
+    background-color: black;
     z-index: 2;
 }
 
@@ -34,14 +49,26 @@ body {
 } */
 
 h1 {
-    color:red;
+    /*color: linear-gradient(to left , rgb(115, 9, 244) , rgb(209, 52, 253));*/
+    /*color : color-mix(in hsl increasing hue, rgb(115, 9, 244) 75%, rgb(209, 52, 253) 25%);*/
+    color : red;
+    font-weight: bolder;
+    text-shadow: 0 0 10px 
+        #ffffff, 0 0 30px #6ec3eb,
+          0 0 40px #0bbff1;
     padding: 16px 24px;
     position: relative;
     border-radius: 8px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
   }
+  
 h1::after {
     position: absolute;
+    content: attr(data-text);
+    top: 100%;
+    left: 0;
+    transform: scaleY(-1);
+    opacity: 0.4;
+    color: #f74141;
     content: "";
     top: 15px;
     left: 0;
@@ -84,7 +111,7 @@ h1::after {
     100% {
       background-position: 200% 50%;
     }
-  }  
+  } 
 
 h2 {
     font-size: 20px;
@@ -129,7 +156,10 @@ h2 {
     position: relative;
     cursor: pointer;
     margin-top: 20px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.01);
+    box-shadow: 0 0 0 5px #03e9f4, 0 0 15px #03e9f4, 0 0 25px #03e9f4, 0 0 100px #03e9f4;
+    -webkit-box-reflect: below
+                1px linear-gradient(transparent, #0005);
+
 }
 
 .restart-button:hover {
