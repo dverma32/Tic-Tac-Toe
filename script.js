@@ -43,3 +43,9 @@ function restartGame() {
     document.getElementById('message').textContent = '';
     document.querySelectorAll('.cell').forEach(cell => cell.textContent = '');
 }
+
+var audio = new Audio('sound.mp3');
+audio.loop = true;
+audio.play().catch(function(error) {
+    console.error('Error playing audio: ', error);
+});
